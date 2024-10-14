@@ -44,7 +44,8 @@ import re
 import os
 from logging.handlers import RotatingFileHandler
 import logging
-
+import httpx
+import yt_dlp
 
 logging.basicConfig(
     level=logging.DEBUG,
