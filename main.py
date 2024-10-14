@@ -70,6 +70,7 @@ auth_users = [5498931783]
 sudo_users = auth_users
 sudo_groups = [-1002116155974]
 
+cookies_file_path = "cookies/cookies.txt"
 shell_usage = f"**USAGE:** Executes terminal commands directly via bot.\n\n<pre>/shell pip install requests</pre>"
 def one(user_id):
     if user_id in sudo_users:
@@ -265,7 +266,7 @@ async def account_login(bot: Client, m: Message):
             if "jw-prod" in url:
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
             else:
-                cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
+                cmd = f"yt-dlp --cookies '{cookies_file_path}' -f '{ytf}' '{url}' -o '{name}.mp4'"
 
             try:  
                 
